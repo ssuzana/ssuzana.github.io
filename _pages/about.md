@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Lecturer | Department of Mathematics | University of California Santa Cruz, CA 95064
+subtitle: Lecturer | Department of Mathematics | University of California Santa Cruz, CA 
 
 profile:
   align: left
