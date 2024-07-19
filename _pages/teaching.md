@@ -9,7 +9,7 @@ nav_order: 1
 
 # Current courses:
  
-- <a href="_assets/html/lec1.html"> MATH 100 Introduction to Proof and Problem Solving</a>, Summer Session 2, 2024.
+- <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDQiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiNzA5NzIiO30%253D"> STAT 131 - Introduction to Probability Theory</a>, Summer Session 2, 2024.
 
 - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDQiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiNzAxMzAiO30%253D"> MATH 100 Introduction to Proof and Problem Solving</a>, Summer Session 2, 2024.  
 
