@@ -20,8 +20,8 @@ social: true # includes social icons at the bottom of the page
 </p>
 
 <p>
-This summer, I'm teaching 
-<a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDQiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiNzAxMjUiO30%253D"> MATH 115 Graph Theory </a>
+I'm currently teaching 
+<a href="https://ssuzana.github.io/stat131/"> STAT 131 Introduction to Probability Theory </a>
 and 
 <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDQiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiNzAxMzAiO30%253D"> MATH 100 Introduction to Proof and Problem Solving</a>.
  </p>
