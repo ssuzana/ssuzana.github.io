@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Lecturer | Department of Mathematics | University of California Santa Cruz, CA 
+subtitle: Lecturer | Mathematics, Statistics | University of California Santa Cruz, CA 
 
 profile:
   align: left
@@ -16,15 +16,16 @@ social: true # includes social icons at the bottom of the page
 
 ---
 
-<p> I completed my PhD in Mathematics under the supervision of <a href="http://martyweissman.com/">Martin Weissman</a> and I'm a Mathematics Lecturer at UC Santa Cruz. Before coming to UC Santa Cruz, I received a M.S. in Mathematics from University of South Florida, a M.S. in Cryptograpy and a B.S. in Math and Computer Science from University of Bucharest. 
+<p> I completed my PhD in Mathematics under the supervision of <a href="http://martyweissman.com/">Martin Weissman</a> and I'm a Lecturer in the Mathematics and in the Statistics Departments at UC Santa Cruz. Before coming to UC Santa Cruz, I received a M.S. in Mathematics from University of South Florida, a M.S. in Cryptograpy and a B.S. in Math and Computer Science from University of Bucharest. 
 </p>
 
-<p>
-I'm currently teaching 
-<a href="https://ssuzana.github.io/stat131/"> STAT 131 Introduction to Probability Theory </a>
-and 
-<a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDQiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiNzAxMzAiO30%253D"> MATH 100 Introduction to Proof and Problem Solving</a>.
- </p>
 
- <p> Committed to continuous learning, I'm currently expanding my expertise in AI and natural language processing, and will soon be taking an <a href="https://uplimit.com/course/llm-apps-with-langchain">LLM Apps with Langchain course</a>, focusing on cutting-edge technologies for developing Large Language Model applications.
- </p>
+I'm currently teaching: 
+
+ - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMTI1MjYiO30%253D"> MATH 101 Mathematical Problem Solving </a>
+
+ - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMTI0MzgiO30%253D"> MATH 11B Calculus with Applications</a>
+
+ - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMTE1NjEiO30%253D"> STAT 17 Statistical Methods for Business and Economics</a>
+
+
