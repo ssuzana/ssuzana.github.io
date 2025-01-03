@@ -20,12 +20,10 @@ social: true # includes social icons at the bottom of the page
 </p>
 
 
-I'm currently teaching: 
+I'm currently teaching (2025 Winter Quarter): 
 
- - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMTI1MjYiO30%253D"> MATH 101 Mathematical Problem Solving </a>
+ - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzE0ODgiO30%253D"> MATH 152 -   Programming for Mathematics </a>
 
- - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMTI0MzgiO30%253D"> MATH 11B Calculus with Applications</a>
-
- - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNDgiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMTE1NjEiO30%253D"> STAT 17 Statistical Methods for Business and Economics</a>
+ - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzIyOTciO30%253D"> MATH 3 -   Precalculus</a>
 
 
