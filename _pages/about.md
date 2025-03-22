@@ -20,10 +20,7 @@ social: true # includes social icons at the bottom of the page
 </p>
 
 
-I'm currently teaching (2025 Winter Quarter): 
+I'm currently teaching (2025 Spring Quarter): TBA
 
- - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzE0ODgiO30%253D"> MATH 152 -   Programming for Mathematics </a>
-
- - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzIyOTciO30%253D"> MATH 3 -   Precalculus</a>
-
+ 
 

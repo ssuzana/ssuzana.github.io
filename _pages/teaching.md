@@ -9,11 +9,9 @@ nav_order: 1
 
 # Current courses:
 
+# Past Courses:
 - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzE0ODgiO30%253D"> MATH 152 -   Programming for Mathematics </a>
  - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzIyOTciO30%253D"> MATH 3 -   Precalculus</a>
-
-# Past Courses:
-  
 - STAT 17 Statistical Methods for Business and Economics: Fall 2024 (214 students)
 - STAT 131 Introduction to Probability Theory: Summer Session II 2024 (70 students). See <a href="https://ssuzana.github.io/stat131/"> Lecture Slides</a>.
 - MATH 152 Programming for Math with Python: Winter 2024 (14 students)
