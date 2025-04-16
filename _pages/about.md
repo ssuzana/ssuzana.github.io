@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Lecturer | Mathematics, Statistics | University of California Santa Cruz, CA 
+subtitle: Lecturer | Mathematics, Statistics | UC Santa Cruz and De Anza College
 
 profile:
   align: left
@@ -19,9 +19,8 @@ social: true # includes social icons at the bottom of the page
 <p> I completed my PhD in Mathematics under the supervision of <a href="http://martyweissman.com/">Martin Weissman</a> and I'm a Lecturer in the Mathematics and in the Statistics Departments at UC Santa Cruz. Before coming to UC Santa Cruz, I received a M.S. in Mathematics from University of South Florida, a M.S. in Cryptograpy and a B.S. in Math and Computer Science from University of Bucharest. 
 </p>
 
-
-I'm currently teaching (2025 Spring Quarter): 
-- MATH 103A Complex Analysis: Spring 2025 - in person at UC Santa Cruz(28 students)
+I'm currently teaching: 
+- MATH 103A Complex Analysis: Spring 2025 - in person at UC Santa Cruz (28 students)
 - MATH 2 College Algebra: Spring 2025 - in person at UC Santa Cruz (75 students)
 - MATH 2A Differential Equations - asyncronous online at De Anza College (93 students) 
 
