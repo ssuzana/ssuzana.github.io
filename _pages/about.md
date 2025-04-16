@@ -20,7 +20,10 @@ social: true # includes social icons at the bottom of the page
 </p>
 
 
-I'm currently teaching (2025 Spring Quarter): TBA
+I'm currently teaching (2025 Spring Quarter): 
+- MATH 103A Complex Analysis: Spring 2025 - in person at UC Santa Cruz(28 students)
+- MATH 2 College Algebra: Spring 2025 - in person at UC Santa Cruz (75 students)
+- MATH 2A Differential Equations - asyncronous online at De Anza College (93 students) 
 
  
 

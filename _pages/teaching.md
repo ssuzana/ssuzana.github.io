@@ -8,7 +8,8 @@ nav_order: 1
 ---
 
 # Current courses:
-
+- MATH 103A Complex Analysis: Spring 2025 (28 students)
+- MATH 2 College Algebra: Spring 2025 (75 students)
 # Past Courses:
 - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzE0ODgiO30%253D"> MATH 152 -   Programming for Mathematics </a>
  - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzIyOTciO30%253D"> MATH 3 -   Precalculus</a>
