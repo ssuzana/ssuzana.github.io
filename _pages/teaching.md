@@ -8,14 +8,16 @@ nav_order: 1
 ---
 
 # Current courses:
-- MATH 103A Complex Analysis: Spring 2025 (28 students)
-- MATH 2 College Algebra: Spring 2025 (75 students)
+ - STAT 5 Statistics, Summer 2025, Session 1
+ - STAT 131 Introduction to Probability Theory, Summer 2025, Session 2
+ - MATH 115 Graph Theory, Summer 2025, Session 2
+
 # Past Courses:
-- <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzE0ODgiO30%253D"> MATH 152 -   Programming for Mathematics </a>
- - <a href="https://pisa.ucsc.edu/class_search/index.php?action=detail&class_data=YToyOntzOjU6IjpTVFJNIjtzOjQ6IjIyNTAiO3M6MTA6IjpDTEFTU19OQlIiO3M6NToiMzIyOTciO30%253D"> MATH 3 -   Precalculus</a>
+- MATH 2A Differential Equations - asyncronous online at De Anza College (93 students) 
+- MATH 103A Complex Analysis: Spring 2025 (28 students)
 - STAT 17 Statistical Methods for Business and Economics: Fall 2024 (214 students)
-- STAT 131 Introduction to Probability Theory: Summer Session II 2024 (70 students). See <a href="https://ssuzana.github.io/stat131/"> Lecture Slides</a>.
-- MATH 152 Programming for Math with Python: Winter 2024 (14 students)
+- STAT 131 Introduction to Probability Theory: Summer Session II 2024 (70 students)
+- MATH 152 Programming for Math with Python: Winter 2024 (14 students), Winter 2025 (27 students)
 - MATH 134 Cryptography: Summer 2022 (21 students), Spring 2024 (33 students)
 - MATH 117 Advanced Linear Algebra: Summer 2018 and 2019, Spring 2023 (28 students)
 - MATH 116 Combinatorics: Fall 2019
@@ -30,8 +32,8 @@ nav_order: 1
 - MATH 19A Calculus for Science, Engin. and Math: Spring 2024 (184 students)
 - MATH 11B Calculus with Applications II: Spring 2022 (151 students), Winter 2023 (288 students), Fall 2024 (110 students)
 - MATH 11A Calculus with Applications I:  Fall 2021 (382 students), Fall 2022 (325 students), Winter 2023 (275 students), Fall 2023 (175 students): Winter 2024 (300 students)
-- MATH 3 Precalculus: Summer 2015, 2016 and Spring 2020, Spring 2023 (137 students)
-- MATH 2 College Algebra for Calculus:  Summer 2018, Fall 2023 (172 students)
+- MATH 3 Precalculus: Summer 2015, 2016 and Spring 2020, Spring 2023 (137 students), Winter 2025 (355 students)
+- MATH 2 College Algebra for Calculus:  Summer 2018, Fall 2023 (172 students), Spring 2025 (75 students)
 - Algebra - Bridge Academy Math Workshop Instructor - Education Opportunity Program at UCSC, Summer 2019
   
 <p> I was a teaching assistant for the following courses:</p>  
