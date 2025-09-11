@@ -7,21 +7,17 @@ nav: true
 nav_order: 1
 ---
 
-# Current courses:
- - STAT 5 Statistics, Summer 2025, Session 1
- - STAT 131 Introduction to Probability Theory, Summer 2025, Session 2
- - MATH 115 Graph Theory, Summer 2025, Session 2
-
 # Past Courses:
+- STAT 5 Statistics: Summer 2025, Session I
 - MATH 2A Differential Equations - asyncronous online at De Anza College (93 students) 
 - MATH 103A Complex Analysis: Spring 2025 (28 students)
 - STAT 17 Statistical Methods for Business and Economics: Fall 2024 (214 students)
-- STAT 131 Introduction to Probability Theory: Summer Session II 2024 (70 students)
+- STAT 131 Introduction to Probability Theory: Summer Session II 2024 (70 students), Summer Session II 2025 (134)
 - MATH 152 Programming for Math with Python: Winter 2024 (14 students), Winter 2025 (27 students)
 - MATH 134 Cryptography: Summer 2022 (21 students), Spring 2024 (33 students)
 - MATH 117 Advanced Linear Algebra: Summer 2018 and 2019, Spring 2023 (28 students)
 - MATH 116 Combinatorics: Fall 2019
-- MATH 115 Graph Theory: Spring 2019,  Winter 2022 (36 students), Summer Session I 2024 (16 students)
+- MATH 115 Graph Theory: Spring 2019,  Winter 2022 (36 students), Summer Session I 2024 (16 students), Summer Session II 2025 (20 students)
 - MATH 110 Introduction to Number Theory: Fall 2021 (51 students)
 - MATH 105A Real Analysis: Summer 2022 (46 students)
 - MATH 101 Mathematical Problem Solving: Fall 2024 (15 students)

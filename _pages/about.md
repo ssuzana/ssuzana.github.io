@@ -19,10 +19,9 @@ social: true # includes social icons at the bottom of the page
 <p> I am currently a Lecturer in both the Mathematics and Statistics Departments at the University of California, Santa Cruz, where I have been teaching since 2021. Prior to joining UC Santa Cruz, I earned an M.S. in Mathematics from the University of South Florida. I also hold an M.S. in Cryptography as well as a B.S. in Mathematics and Computer Science, both from the University of Bucharest.
 </p>
 
-I'm currently teaching: 
- - STAT 5 Statistics, Summer 2025, Session 1
- - STAT 131 Introduction to Probability Theory, Summer 2025, Session 2
- - MATH 115 Graph Theory, Summer 2025, Session 2
+I'm currently teaching (Fall 2025): 
+ - MATH 23A Vector Calculus
+ - MATH 101 Mathematical Problem Solving
 
 
  
