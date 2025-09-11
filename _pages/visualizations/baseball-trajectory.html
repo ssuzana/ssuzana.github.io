@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baseball Trajectory Visualization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f4f6;
+        }
+    </style>
+</head>
+<body>
+    <div id="problem-statement" class="max-w-4xl mx-auto mb-8 p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">Projectile Motion: Baseball Trajectory Problem</h1>
+        
+        <div class="prose max-w-none">
+            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                <h2 class="text-xl font-semibold mb-3 text-blue-800">Problem Statement</h2>
+                <p class="mb-3">Consider a projectile launched at a height <em>h</em> feet above the ground and at an angle θ with the horizontal. When the initial velocity is <em>v</em>₀ feet per second, the path of the projectile is modeled by the parametric equations:</p>
+                
+                <div class="text-center my-4 p-3 bg-white rounded border-l-4 border-blue-400">
+                    <strong>x = (v₀ cos θ)t</strong> &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; <strong>y = h + (v₀ sin θ)t - 16t²</strong>
+                </div>
+                
+                <p class="mb-3">The center field fence in a ballpark is 10 feet high and 400 feet from home plate. The ball is hit 3 feet above the ground. It leaves the bat at an angle of θ degrees with the horizontal at a speed of 100 miles per hour.</p>
+                
+                <div class="mt-4">
+                    <p><strong>(a)</strong> Write a set of parametric equations for the path of the ball.</p>
+                    <p><strong>(b)</strong> Find the minimum angle at which the ball must leave the bat in order for the hit to be a home run.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="app" class="w-full max-w-6xl mx-auto p-6 bg-gradient-to-b from-sky-100 to-green-100 rounded-lg">
+        <h2 class="text-2xl font-bold text-center mb-4 text-gray-800">Baseball Trajectory Analysis</h2>
+        
+        <!-- Controls -->
+        <div class="bg-white rounded-lg p-4 mb-4 shadow-md">
+            <div class="flex flex-wrap items-center gap-4 mb-4">
+                <div class="flex items-center gap-2">
+                    <label class="font-medium text-gray-700">Launch Angle:</label>
+                    <input type="range" min="5" max="60" value="15" id="angleSlider" class="w-32">
+                    <span id="angleDisplay" class="w-12 text-center font-mono text-gray-800">15°</span>
+                </div>
+                
+                <div class="flex gap-2">
+                    <button id="playBtn" class="flex items-center gap-1 px-3 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                        ▶ Play
+                    </button>
+                    <button id="resetBtn" class="flex items-center gap-1 px-3 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 transition-colors">
+                        ↻ Reset
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Status indicators -->
+            <div class="flex flex-wrap gap-4 text-sm">
+                <div id="fenceStatus" class="px-3 py-1 rounded-full bg-red-100 text-red-800">
+                    Fence: Calculating...
+                </div>
+                <div id="homerunStatus" class="px-3 py-1 rounded-full bg-red-100 text-red-800">
+                    Not a home run
+                </div>
+                <div id="distanceStatus" class="px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                    Distance: 0 ft
+                </div>
+            </div>
+        </div>
+        
+        <!-- Visualization -->
+        <div class="bg-white rounded-lg p-4 mb-4 shadow-md">
+            <svg width="100%" height="500" viewBox="0 0 800 500" class="border rounded" id="trajectorySvg">
+                <!-- Sky gradient -->
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#87CEEB" />
+                        <stop offset="100%" stop-color="#98FB98" />
+                    </linearGradient>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+                    </marker>
+                </defs>
+                <rect width="800" height="500" fill="url(#skyGradient)" />
+                
+                <!-- Ground -->
+                <rect x="0" y="470" width="800" height="30" fill="#8B7355" />
+                
+                <!-- Home plate -->
+                <rect x="20" y="462" width="8" height="8" fill="#FFFFFF" />
+                
+                <!-- Distance markers -->
+                <g id="distanceMarkers"></g>
+                
+                <!-- Fence -->
+                <rect x="520" y="420" width="4" height="50" fill="#654321" />
+                <text x="530" y="415" font-size="12" fill="#333">10 ft</text>
+                <text x="530" y="490" font-size="12" fill="#333">400 ft</text>
+                
+                <!-- Trajectory path -->
+                <polyline id="trajectoryPath" fill="none" stroke="#FF6B6B" stroke-width="3" />
+                
+                <!-- Current ball -->
+                <circle id="ball" cx="24" cy="456" r="5" fill="#FF4444" stroke="#FFFFFF" stroke-width="2" style="display: none;" />
+                
+                <!-- Launch angle indicator -->
+                <line id="angleLine" x1="28" y1="456" x2="58" y2="456" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+                <text id="angleText" x="45" y="475" font-size="12" fill="#333">15°</text>
+            </svg>
+        </div>
+        
+        <!-- Solution -->
+        <div class="bg-white rounded-lg p-4 shadow-md">
+            <button id="solutionBtn" class="font-bold text-lg mb-3 text-blue-600 hover:text-blue-800 cursor-pointer">
+                ▶ Solution Steps
+            </button>
+            
+            <div id="solutionContent" class="space-y-4 text-gray-700" style="display: none;">
+                <div>
+                    <h3 class="font-bold text-lg mb-2">(a) Parametric Equations:</h3>
+                    <div class="bg-gray-50 p-3 rounded font-mono text-sm">
+                        <p>Given: h = 3 ft, v₀ = 100 mph = 146.67 ft/s, θ = angle</p>
+                        <p class="mt-2">x = (v₀ cos θ)t = (146.67 cos θ)t</p>
+                        <p>y = h + (v₀ sin θ)t - 16t² = 3 + (146.67 sin θ)t - 16t²</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-2">(b) Minimum Angle for Home Run:</h3>
+                    <div class="bg-gray-50 p-3 rounded">
+                        <p>For a home run, the ball must clear the 10-ft fence at 400 ft distance.</p>
+                        <p class="mt-2">At x = 400: t = 400/(v₀ cos θ)</p>
+                        <p>At the fence: y = 3 + v₀ sin θ · t - 16t²</p>
+                        <p class="mt-2">For the ball to clear: y ≥ 10 ft at x = 400 ft</p>
+                        <p class="mt-2 font-bold text-green-600" id="minAngleResult">
+                            Minimum angle: 13.9°
+                        </p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-2">Current Trajectory Analysis:</h3>
+                    <div id="currentAnalysis" class="bg-gray-50 p-3 rounded text-sm">
+                        <p>Launch angle: <span id="currentAngle">15</span>°</p>
+                        <p>Height at fence: <span id="currentFenceHeight">0</span> ft</p>
+                        <p>Maximum distance: <span id="currentDistance">0</span> ft</p>
+                        <p>Flight time: <span id="currentTime">0</span> seconds</p>
+                        <p id="currentResult" class="font-bold text-red-600">
+                            Result: Not a home run
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Constants
+        const h = 3; // initial height (feet)
+        const v0_mph = 100; // initial velocity (mph)
+        const v0 = v0_mph * 5280 / 3600; // convert to feet per second
+        const fenceHeight = 10; // feet
+        const fenceDistance = 400; // feet
+        
+        // Current state
+        let currentAngle = 15;
+        let isAnimating = false;
+        let animationId = null;
+        let currentTime = 0;
+        
+        // Elements
+        const angleSlider = document.getElementById('angleSlider');
+        const angleDisplay = document.getElementById('angleDisplay');
+        const playBtn = document.getElementById('playBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const trajectoryPath = document.getElementById('trajectoryPath');
+        const ball = document.getElementById('ball');
+        const angleLine = document.getElementById('angleLine');
+        const angleText = document.getElementById('angleText');
+        const solutionBtn = document.getElementById('solutionBtn');
+        const solutionContent = document.getElementById('solutionContent');
+        
+        // Physics calculations
+        function getX(t, angle) {
+            const angleRad = (angle * Math.PI) / 180;
+            return v0 * Math.cos(angleRad) * t;
+        }
+        
+        function getY(t, angle) {
+            const angleRad = (angle * Math.PI) / 180;
+            return h + v0 * Math.sin(angleRad) * t - 16 * t * t;
+        }
+        
+        function getMaxTime(angle) {
+            const angleRad = (angle * Math.PI) / 180;
+            const a = 16;
+            const b = -v0 * Math.sin(angleRad);
+            const c = -h;
+            const discriminant = b * b - 4 * a * c;
+            return (-b + Math.sqrt(discriminant)) / (2 * a);
+        }
+        
+        function getMinimumAngle() {
+            for (let testAngle = 1; testAngle < 90; testAngle += 0.1) {
+                const testAngleRad = (testAngle * Math.PI) / 180;
+                const t_fence = fenceDistance / (v0 * Math.cos(testAngleRad));
+                const y_fence = h + v0 * Math.sin(testAngleRad) * t_fence - 16 * t_fence * t_fence;
+                
+                if (y_fence >= fenceHeight) {
+                    return testAngle;
+                }
+            }
+            return 0;
+        }
+        
+        // Update visualization
+        function updateTrajectory() {
+            const maxTime = getMaxTime(currentAngle);
+            const maxDistance = getX(maxTime, currentAngle);
+            
+            // Generate path points
+            const points = [];
+            const steps = 100;
+            for (let i = 0; i <= steps; i++) {
+                const t = (i / steps) * maxTime;
+                const x = getX(t, currentAngle);
+                const y = getY(t, currentAngle);
+                if (y >= 0) {
+                    // Scale to fit in SVG (800x500)
+                    const scaledX = 30 + (x / 600) * 740; // Scale x to fit width
+                    const scaledY = 470 - (y / 200) * 400; // Scale y to fit height
+                    points.push(`${scaledX},${scaledY}`);
+                }
+            }
+            trajectoryPath.setAttribute('points', points.join(' '));
+            
+            // Update angle indicator
+            const angleRad = (currentAngle * Math.PI) / 180;
+            const endX = 28 + 30 * Math.cos(angleRad);
+            const endY = 456 - 30 * Math.sin(angleRad);
+            angleLine.setAttribute('x2', endX);
+            angleLine.setAttribute('y2', endY);
+            angleText.textContent = currentAngle + '°';
+            
+            // Check if it's a home run
+            const timeAtFence = fenceDistance / (v0 * Math.cos(angleRad));
+            const heightAtFence = timeAtFence <= maxTime ? getY(timeAtFence, currentAngle) : -1;
+            const clearsFence = heightAtFence >= fenceHeight;
+            const isHomeRun = clearsFence && maxDistance >= fenceDistance;
+            
+            // Update status
+            const fenceStatus = document.getElementById('fenceStatus');
+            const homerunStatus = document.getElementById('homerunStatus');
+            const distanceStatus = document.getElementById('distanceStatus');
+            
+            if (clearsFence) {
+                fenceStatus.textContent = `Fence: Clears (${heightAtFence.toFixed(1)} ft)`;
+                fenceStatus.className = 'px-3 py-1 rounded-full bg-green-100 text-green-800';
+            } else {
+                fenceStatus.textContent = `Fence: Hits (${heightAtFence.toFixed(1)} ft)`;
+                fenceStatus.className = 'px-3 py-1 rounded-full bg-red-100 text-red-800';
+            }
+            
+            if (isHomeRun) {
+                homerunStatus.textContent = 'HOME RUN!';
+                homerunStatus.className = 'px-3 py-1 rounded-full bg-green-100 text-green-800';
+            } else {
+                homerunStatus.textContent = 'Not a home run';
+                homerunStatus.className = 'px-3 py-1 rounded-full bg-red-100 text-red-800';
+            }
+            
+            distanceStatus.textContent = `Distance: ${maxDistance.toFixed(1)} ft`;
+            
+            // Update solution analysis
+            document.getElementById('currentAngle').textContent = currentAngle;
+            document.getElementById('currentFenceHeight').textContent = heightAtFence.toFixed(1);
+            document.getElementById('currentDistance').textContent = maxDistance.toFixed(1);
+            document.getElementById('currentTime').textContent = maxTime.toFixed(2);
+            
+            const currentResult = document.getElementById('currentResult');
+            if (isHomeRun) {
+                currentResult.textContent = 'Result: HOME RUN!';
+                currentResult.className = 'font-bold text-green-600';
+            } else {
+                currentResult.textContent = 'Result: Not a home run';
+                currentResult.className = 'font-bold text-red-600';
+            }
+        }
+        
+        // Animation
+        function animate() {
+            if (!isAnimating) return;
+            
+            const maxTime = getMaxTime(currentAngle);
+            currentTime += 0.03;
+            
+            if (currentTime >= maxTime) {
+                currentTime = maxTime;
+                isAnimating = false;
+                playBtn.textContent = '▶ Play';
+            }
+            
+            const x = getX(currentTime, currentAngle);
+            const y = getY(currentTime, currentAngle);
+            
+            if (y >= 0) {
+                const scaledX = 30 + (x / 600) * 740;
+                const scaledY = 470 - (y / 200) * 400;
+                ball.setAttribute('cx', scaledX);
+                ball.setAttribute('cy', scaledY);
+                ball.style.display = 'block';
+            } else {
+                ball.style.display = 'none';
+            }
+            
+            if (isAnimating) {
+                animationId = requestAnimationFrame(animate);
+            }
+        }
+        
+        // Event listeners
+        angleSlider.addEventListener('input', (e) => {
+            currentAngle = parseInt(e.target.value);
+            angleDisplay.textContent = currentAngle + '°';
+            reset();
+            updateTrajectory();
+        });
+        
+        playBtn.addEventListener('click', () => {
+            if (isAnimating) {
+                isAnimating = false;
+                playBtn.textContent = '▶ Play';
+                if (animationId) cancelAnimationFrame(animationId);
+            } else {
+                isAnimating = true;
+                playBtn.textContent = '⏸ Pause';
+                animate();
+            }
+        });
+        
+        resetBtn.addEventListener('click', reset);
+        
+        function reset() {
+            isAnimating = false;
+            currentTime = 0;
+            playBtn.textContent = '▶ Play';
+            ball.style.display = 'none';
+            if (animationId) cancelAnimationFrame(animationId);
+        }
+        
+        solutionBtn.addEventListener('click', () => {
+            const isVisible = solutionContent.style.display !== 'none';
+            if (isVisible) {
+                solutionContent.style.display = 'none';
+                solutionBtn.textContent = '▶ Solution Steps';
+            } else {
+                solutionContent.style.display = 'block';
+                solutionBtn.textContent = '▼ Solution Steps';
+            }
+        });
+        
+        // Add distance markers
+        const distanceMarkers = document.getElementById('distanceMarkers');
+        [100, 200, 300, 400, 500].forEach(dist => {
+            const x = 30 + (dist / 600) * 740;
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', x);
+            line.setAttribute('y1', '470');
+            line.setAttribute('x2', x);
+            line.setAttribute('y2', '480');
+            line.setAttribute('stroke', '#666');
+            line.setAttribute('stroke-width', '1');
+            distanceMarkers.appendChild(line);
+            
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', x - 5);
+            text.setAttribute('y', '495');
+            text.setAttribute('font-size', '10');
+            text.setAttribute('fill', '#666');
+            text.textContent = dist;
+            distanceMarkers.appendChild(text);
+        });
+        
+        // Initialize
+        document.getElementById('minAngleResult').textContent = `Minimum angle: ${getMinimumAngle().toFixed(1)}°`;
+        updateTrajectory();
+    </script>
+</body>
+</html>
