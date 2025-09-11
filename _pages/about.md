@@ -20,7 +20,7 @@ social: true # includes social icons at the bottom of the page
 </p>
 
 I'm currently teaching (Fall 2025): 
- - MATH 23A Vector Calculus
+ - MATH 23A Vector Calculus. [View my interactive course materials](/math23A/)
  - MATH 101 Mathematical Problem Solving
 
 
